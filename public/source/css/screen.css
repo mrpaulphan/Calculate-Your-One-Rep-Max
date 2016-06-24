@@ -444,6 +444,14 @@ body {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 /* $body: #232323;
@@ -619,6 +627,7 @@ flex-direction: column;
 .icon {
   width: 20px;
   height: 20px;
+  cursor: pointer;
 }
 
 .icon-down-arrow {
@@ -626,28 +635,17 @@ flex-direction: column;
   height: 15px;
   position: absolute;
   right: 10px;
-  top: 8px;
+  top: 14px;
 }
 
 .icon-setting g {
   fill: #fff;
-  opacity: .9;
+  opacity: 0.9;
 }
 
 .icon-info path {
   fill: #fff;
-  opacity: .9;
-}
-
-.card-outer {
-  -webkit-perspective: 800;
-          perspective: 800;
-  width: 100%;
-  height: 400px;
-}
-
-.card-outer--results {
-  display: none;
+  opacity: 0.9;
 }
 
 .card {
@@ -662,7 +660,28 @@ flex-direction: column;
   font-family: 'Lato', sans-serif;
   font-weight: 700;
   text-align: center;
-  font-size: 24px;
+  font-size: 20px;
+}
+
+@media (min-width: 751px) {
+  .card h2 {
+    font-size: 24px;
+  }
+}
+
+.card-outer {
+  -webkit-perspective: 800;
+          perspective: 800;
+  width: 100%;
+  height: 400px;
+}
+
+.card-outer--results {
+  display: none;
+}
+
+.card-inner {
+  padding: 20px 10px;
 }
 
 .card_header {
@@ -689,7 +708,6 @@ flex-direction: column;
   z-index: 1;
   background-color: #2A2629;
   color: white;
-  cursor: pointer;
 }
 
 .card_face--back {
@@ -699,7 +717,6 @@ flex-direction: column;
   background: blue;
   background: white;
   color: black;
-  cursor: pointer;
 }
 
 .card.flipped {
@@ -715,17 +732,20 @@ flex-direction: column;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-.card_input:not(:last-child) {
-  margin-bottom: 20px;
+  margin-top: 30px;
 }
 
 .card_input label {
   font-family: 'Lato', sans-serif;
   font-weight: 700;
-  font-size: 18px;
   margin-bottom: 10px;
+  font-size: 16px;
+}
+
+@media (min-width: 751px) {
+  .card_input label {
+    font-size: 18px;
+  }
 }
 
 .card_input input,
@@ -734,11 +754,18 @@ flex-direction: column;
   font-weight: 400;
   -webkit-appearance: none;
   border-radius: 0;
-  height: 30px;
+  height: 40px;
   border: none;
   color: #2A2629;
-  text-indent: 5px;
+  text-indent: 10px;
   width: 100%;
+}
+
+.card_input input:focus,
+.card_input select:focus {
+  box-shadow: 0 0 6px #f34b4b;
+  border: #F34B4B;
+  outline: none;
 }
 
 .card_input button {
@@ -750,7 +777,7 @@ flex-direction: column;
   text-transform: uppercase;
   outline: none;
   border: none;
-  height: 30px;
+  height: 40px;
 }
 
 .align-center {
